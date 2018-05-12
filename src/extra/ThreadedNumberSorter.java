@@ -12,6 +12,15 @@ public class ThreadedNumberSorter {
 		long startTime = System.nanoTime();
 		//Complete this method starting at this point
 		
+		Thread r1 = new Thread(
+			new Runnable() {
+				public void run() {
+					int mid = nums.length/2;
+					
+				}
+			}
+		);
+		
 		
 		long totalTime = System.nanoTime() - startTime;
 		double timeInSeconds = (double)totalTime / 1_000_000_000;
@@ -26,9 +35,9 @@ public class ThreadedNumberSorter {
 			nums[i] = randGen.nextInt(TOTAL_NUMS);
 		}
 
-		//printArray(nums);
+		printArray(nums);
 		parallelSort(nums);
-		//printArray(nums);
+		printArray(nums);
 	}
 	
 	private static void printArray(int[] nums){

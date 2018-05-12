@@ -30,7 +30,20 @@ public class MurderOfCrows {
          */
         
         /* 2. How many innocent crows had to die before the diamond was found? */
-        
+    		int dead = -1;
+    		for (int i=0; i< theMurder.size(); i++) {
+    			dead ++;
+    			Crow x = theMurder.get(i);
+    			ArrayList<String> contents = x.getStomachContents();
+    			for (int j=0; j< contents.size(); j++) {
+    				if (contents.get(j).equals("diamond")) {
+    					System.out.println(x.getName());
+    					j = contents.size();
+    					i = theMurder.size();
+    				}
+    			}
+    		}
+    		System.out.println(dead + " innocent crows died");
     }
 
     private void initializeCrows() {
